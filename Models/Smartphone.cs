@@ -2,23 +2,32 @@ namespace DesafioPOO.Models
 {
     public abstract class Smartphone
     {
+        public string NomeApp { get; set; }
         public string Numero { get; set; }
-        // TODO: Implementar as propriedades faltantes de acordo com o diagrama
+        public string ModeloCel { get; set; }
 
-        public Smartphone(string numero)
+        public string Memoria { get; set; }
+
+        public Smartphone(string numero, string modelo, string memoria)
         {
             Numero = numero;
-            // TODO: Passar os parâmetros do construtor para as propriedades
-        }
+            ModeloCel = modelo;
+            Memoria = memoria;
+            Console.WriteLine($"Dados do smartphone:");
+            Console.WriteLine($"Modelo: {ModeloCel}");
+            Console.WriteLine($"Nª: {Numero}");
+            Console.WriteLine($"Espaço disponível: {Memoria}GB");
+            Console.WriteLine("");
 
+        }
         public void Ligar()
         {
-            Console.WriteLine("Ligando...");
+            Console.WriteLine($"Nª {Numero} Ligando...");
         }
 
         public void ReceberLigacao()
         {
-            Console.WriteLine("Recebendo ligação...");
+            Console.WriteLine($"Nª {Numero} Recebendo ligação...");
         }
 
         public abstract void InstalarAplicativo(string nomeApp);
